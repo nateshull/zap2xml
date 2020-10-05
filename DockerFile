@@ -1,17 +1,28 @@
-FROM centos/perl-530-centos7
+FROM amd64/centos:7
 
 ENV container docker
 
+RUN yum -y install epel-release
 RUN yum update -y
 RUN yum install perl-Time-Piece -y
-
-RUN mkdir /mnt/export
+RUN yum install perl-Compress-Raw-Zlib -y
+RUN yum install perl-Compress-Zlib -y
+RUN yum install perl-HTTP-Cookies -y
+RUN yum install perl-libwww-perl -y
+RUN yum install perl-LWP-Protocol-https -y
+RUN yum install perl-JSON -y
+RUN yum install perl-JSON-PP -y
+RUN yum install perl-JSON-XS -y
 
 RUN mkdir /var/zap2xml
+
+RUN mkdir /mnt/export
 
 RUN curl https://raw.githubusercontent.com/nateshull/zap2xml/master/zap2xml2.pl > /var/zap2xml/zap2xml2.pl
 
 RUN curl https://raw.githubusercontent.com/nateshull/zap2xml/master/zap2xml.sh > /var/zap2xml/zap2xml.sh
+
+RUN chmod -R 777 /mnt/export
 
 RUN chmod -R 777 /var/zap2xml/*
 
