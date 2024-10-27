@@ -32,4 +32,6 @@ ENV USER="BLANK"
 
 ENV PASS="PASS"
 
+ENV TIME="TIME"
+
 ENTRYPOINT /var/zap2xml/zap2xml.sh
