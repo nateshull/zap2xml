@@ -1,4 +1,5 @@
-FROM amd64/centos:7
+FROM 
+#FROM amd64/centos:7
 
 ENV container docker
 
