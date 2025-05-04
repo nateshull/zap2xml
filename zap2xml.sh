@@ -8,9 +8,9 @@ while :
 do
   currtime=$(date +%H%M)
   uppertime=$(date -d "$looptime minutes" +%H%M )
-  if [$currtime <= $TIME] 
+  if (($currtime <= $TIME)) 
   then
-    if [$uppertime >= $TIME] 
+    if (($uppertime >= $TIME))
     then
       cd /var/zap2xml/
       rm /mnt/export/xmltv.xml
