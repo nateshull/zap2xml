@@ -1,19 +1,21 @@
-FROM almalinux/9-minimal
-#FROM amd64/centos:7
+FROM almalinux:latest
 
 ENV container docker
 
-RUN yum -y install epel-release
-RUN yum update -y
-RUN yum install perl-Time-Piece -y
-RUN yum install perl-Compress-Raw-Zlib -y
-RUN yum install perl-Compress-Zlib -y
-RUN yum install perl-HTTP-Cookies -y
-RUN yum install perl-libwww-perl -y
-RUN yum install perl-LWP-Protocol-https -y
-RUN yum install perl-JSON -y
-RUN yum install perl-JSON-PP -y
-RUN yum install perl-JSON-XS -y
+RUN dnf -y install epel-release
+RUN dnf config-manager --set-enabled crb
+RUN dnf update -y
+RUN dnf install perl-Time-Piece -y
+RUN dnf install perl-Compress-Raw-Zlib -y
+RUN dnf install perl-Compress-Zlib -y
+RUN dnf install perl-HTTP-Cookies -y
+RUN dnf install perl-libwww-perl -y
+RUN dnf install perl-LWP-Protocol-https -y
+RUN dnf install perl-Time-HiRes
+RUN dnf install perl-File-Copy
+RUN dnf install perl-JSON -y
+RUN dnf install perl-JSON-PP -y
+RUN dnf install perl-JSON-XS -y
 
 RUN mkdir /var/zap2xml
 
