@@ -6,8 +6,10 @@ looptime=10
 sleeptime=599
 while :
 do
-  currtime=$(date +%H%M)
-  uppertime=$(date -d "$looptime minutes" +%H%M )
+  currtimepf=$(date +%H%M)
+  uppertimepf=$(date -d "$looptime minutes" +%H%M )
+  currtime=$(expr $currtimepf + 0)
+  uppertime=$(expr $uppertimepf + 0)
   if (($currtime <= $TIME)) 
   then
     if (($uppertime >= $TIME))
