@@ -11,8 +11,8 @@ RUN dnf install perl-Compress-Zlib -y
 RUN dnf install perl-HTTP-Cookies -y
 RUN dnf install perl-libwww-perl -y
 RUN dnf install perl-LWP-Protocol-https -y
-RUN dnf install perl-Time-HiRes
-RUN dnf install perl-File-Copy
+RUN dnf install perl-Time-HiRes -y
+RUN dnf install perl-File-Copy -y
 RUN dnf install perl-JSON -y
 RUN dnf install perl-JSON-PP -y
 RUN dnf install perl-JSON-XS -y
