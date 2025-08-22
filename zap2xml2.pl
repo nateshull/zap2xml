@@ -150,7 +150,7 @@ $allChan = 1 if defined($zipcode) && defined($zlineupId);
 $sleeptime = $options{S} if defined $options{S};
 $shiftMinutes = $options{m} if defined $options{m};
 $ncdays = $days - $ncdays; # make relative to the end
-$urlRoot = 'https://tvlistings.gracenote.com/';
+$urlRoot = 'https://tvlistings.gracenote.com/grid-affiliates.html?aid=orbebb';
 $urlAssets = 'https://zap2it.tmsimg.com/assets/';
 #$urlRoot = 'https://tvlistings.zap2it.com/';
 #$urlAssets = 'https://zap2it.tmsimg.com/assets/';
